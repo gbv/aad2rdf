@@ -33,15 +33,13 @@ my $records = $importer->map(sub{
 sub fix_marc_field {
     my $m = shift;
 
-    return if $m->[0] eq '667' and $m->[4] eq 'VD-17'; # editorialNote
+    return if $m->[0] eq '667' and $m->[4] eq 'VD-17';
+    return if $m->[0] eq '670';
 
-    # move definition from 750 to 680
-    if ($m->[0] eq '750') {
-        $m->[0] = '677';
-        $m->[2] = ' ';
-        $m->[3] = 'i';
-        # remove static reference to AAD in each record
-        return if $m->[4] =~ /^(Source: )?(AAD )?Gattungsbegriff/;
+    if ($m->[0] eq '680') { # Benutzungshinweis
+        $m->[0] = '667'; # => skos:editorialNote
+    } elsif ($m->[0] eq '679') { # Definition
+        $m->[0] = '677'; # => skos:definition
     } elsif ($m->[0] eq '550') {
 
 		# non-standard subfield $9 
