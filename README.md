@@ -28,6 +28,10 @@ Workflow:
 Die RDF-Daten werden anschließend unter <http://uri.gbv.de/terminology/aadgenres/>
 zur Verfügung gestellt.
 
+Optional kann eine Textversion zum Vergleich mit dem bisherigen PDF erstellt werden:
+
+    $ make aadgenres.txt
+
 ## Weitere Informationen zu den Gattungsbegriffen
 
 * [Arbeitsgemeinschaft Alte Drucke](https://aad.gbv.de/)

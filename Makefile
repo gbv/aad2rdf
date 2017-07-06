@@ -1,4 +1,9 @@
+all: rdf aadgenres.txt
+
 rdf: aadgenres.ttl aadgenres.json aadgenres.ndjson
+
+aadgenres.txt: aadgenres.ndjson
+	perl ndjson2txt.pl < $< > $@
 
 aadgenres.xml:
 	perl download.pl > $@
