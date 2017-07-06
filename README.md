@@ -3,13 +3,14 @@
 Die Gattungsbegriffe der Arbeitsgemeinschaft Alte Drucke beim GBV (AAD) dient
 zur einheitlichen Verschlagwortung Alter Drucke im GBv bis zum Erscheinungsjahr
 1850. Die Normdatei ist aus der sogenannten "Göttinger"-Liste und der
-VD17-Liste hervorgegangen. Die einzelnen der rund 200 Gattungsbegriffe können
+VD17-Liste hervorgegangen. Die einzelnen der rund 275 Gattungsbegriffe können
 durch Thesaurus-Relationen miteinander verknüpft werden.
 
 Die Gattungsbegriffe werden von der [Arbeitsgemeinschaft Alte Drucke] gemeinsam
-gepflegt und in Form von Normdatensätzen im VD17-Katalog verwaltet. Die Daten
-sind unter [CC0] frei verfügbar. Um die ursprünglich im PICA-Format
-vorliegenden Datensätzen nach RDF zu konvertieren besteht folgender Workflow:
+gepflegt und in Form von Normdatensätzen im Verbundkatalog des GBV (GVK)
+verwaltet.  Die Daten sind unter [CC0] frei verfügbar. Um die ursprünglich im
+PICA-Format vorliegenden Datensätzen nach RDF zu konvertieren besteht folgender
+Workflow:
 
 * Die Datensätze lassen sich im Format [MARC 21 Authority] (MARCXML)
   aus dem GVK per SRU abrufen (`pica.tbs=xgt`).

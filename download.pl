@@ -1,5 +1,4 @@
 #!/usr/bin/env perl
-use strict;
 use v5.14;
 use LWP::Simple;
 use Catmandu -all;
@@ -12,7 +11,7 @@ my $exporter = exporter('MARC', type => 'XML', pretty => 1);
 
 # get all AAD records via SRU
 my $importer = importer('SRU', 
-    base => 'http://sru.gbv.de/vd17',
+    base => 'http://sru.gbv.de/gsocat',
     query => 'pica.tbs=xgt',
     recordSchema => 'marcxml',
     parser => 'marcxml',
@@ -42,7 +41,7 @@ sub fix_marc_field {
         $m->[2] = ' ';
         $m->[3] = 'i';
         # remove static reference to AAD in each record
-        return if $m->[4] =~ /^(AAD )?Gattungsbegriff/;
+        return if $m->[4] =~ /^(Source: )?(AAD )?Gattungsbegriff/;
     } elsif ($m->[0] eq '550') {
 
 		# non-standard subfield $9 
