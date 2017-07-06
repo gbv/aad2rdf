@@ -15,15 +15,18 @@ Workflow:
 * Die Datensätze lassen sich im Format [MARC 21 Authority] (MARCXML)
   aus dem GVK per SRU abrufen (`pica.tbs=xgt`).
 
-      $ make aad.xml
+      $ make aadgenres.xml
     
   Die Datensätze werden dabei um einige Felder ergänzt um die Konvertierung zu
   erleichtern.
 
-* Die gesamten MARCXML-Datensätze werden anschließend mit [mc2skos] nach RDF
-  konvertiert wobei die Formate RDF/Turtle und JSKOS angeboten werden.
+* Die gesamten MARCXML-Datensätze werden anschließend mit [mc2skos] nach
+  SKOS/RDF konvertiert wobei die Formate Turtle und JSKOS angeboten werden.
 
       $ make rdf
+
+Die RDF-Daten werden anschließend unter <http://uri.gbv.de/terminology/aadgenres/>
+zur Verfügung gestellt.
 
 ## Weitere Informationen zu den Gattungsbegriffen
 

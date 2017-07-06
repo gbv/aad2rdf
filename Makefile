@@ -1,18 +1,18 @@
-rdf: aad.ttl aad.json aad.ndjson
+rdf: aadgenres.ttl aadgenres.json aadgenres.ndjson
 
-aad.xml:
+aadgenres.xml:
 	perl download.pl > $@
 
-URI=http://uri.gbv.de/terminology/aad/
+URI=http://uri.gbv.de/terminology/aadgenres/
 MC2SKOS_OPTIONS=--uri '$(URI){control_number}' --scheme $(URI) --indexterms --notes
 
-aad.ttl: aad.xml
+aadgenres.ttl: aadgenres.xml
 	mc2skos -o turtle $(MC2SKOS_OPTIONS) $< $@
 
-aad.json: aad.xml
+aadgenres.json: aadgenres.xml
 	mc2skos -o jskos $(MC2SKOS_OPTIONS) $< $@
 
-aad.ndjson: aad.xml
+aadgenres.ndjson: aadgenres.xml
 	mc2skos -o ndjson $(MC2SKOS_OPTIONS) $< $@
 
 install:
